@@ -6,7 +6,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.box}>
-          <Text>Open up App.js</Text>
+          <Text style={styles.first}>Open up App.js</Text>
           <Text>to start working on your app!</Text>
         </View>
       </View>
@@ -29,4 +29,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#E0E0E0',
   },
+  first: {
+    fontSize: 20,
+    color: '#6830CF',
+    fontWeight: '600',
+    padding: 16,
+  }
 });
