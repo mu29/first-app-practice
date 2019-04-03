@@ -1,14 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.box}>
-          <Text style={styles.first}>Open up App.js</Text>
-          <Text>to start working on your app!</Text>
-        </View>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => { Alert.alert('눌렀어요!') }}
+        >
+          <View style={styles.box}>
+            <Text style={styles.first}>시작하기</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -23,15 +27,12 @@ const styles = StyleSheet.create({
   },
   box: {
     flexDirection: 'row',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#6830CF',
     padding: 16,
-    margin: 64,
-    borderWidth: 1,
-    borderColor: '#E0E0E0',
   },
   first: {
     fontSize: 20,
-    color: '#6830CF',
+    color: '#FFFFFF',
     fontWeight: '600',
     padding: 16,
   }
