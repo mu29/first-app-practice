@@ -12,7 +12,10 @@ export default class App extends React.Component {
           onChangeText={(text) => { content = text }}
           style={styles.input}
         />
-        <StartButton showAlert={() => { Alert.alert(content) }} />
+        <StartButton
+          showAlert={() => { Alert.alert(content) }}
+          disabled={true}
+        />
       </View>
     );
   }
