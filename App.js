@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert, TextInput } from 'react-native';
+import StartButton from './components/StartButton'
 
 export default class App extends React.Component {
   render() {
@@ -11,14 +12,7 @@ export default class App extends React.Component {
           onChangeText={(text) => { content = text }}
           style={styles.input}
         />
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => { Alert.alert(content) }}
-        >
-          <View style={styles.box}>
-            <Text style={styles.first}>시작하기</Text>
-          </View>
-        </TouchableOpacity>
+        <StartButton showAlert={() => { Alert.alert(content) }} />
       </View>
     );
   }
