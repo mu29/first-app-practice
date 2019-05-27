@@ -3,18 +3,21 @@ import { StyleSheet, Text, View, TouchableOpacity, Alert, TextInput } from 'reac
 import StartButton from './components/StartButton'
 
 export default class App extends React.Component {
+  state = {
+    content: '',
+  }
+
   render() {
-    let content = ''
     return (
       <View style={styles.container}>
         <TextInput
           placeholder="여기에 입력해주세요"
-          onChangeText={(text) => { content = text }}
+          onChangeText={(text) => this.setState({ content: text })}
           style={styles.input}
         />
         <StartButton
           showAlert={() => { Alert.alert(content) }}
-          disabled={true}
+          disabled={this.state.content.length < 0 ? false : true}
         />
       </View>
     );
